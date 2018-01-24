@@ -1,0 +1,9 @@
+version: '3'
+services:
+  web:
+    image: "atlas1/webserver"
+    ports:
+     - "80:80"
+    volumes:
+      - ./application:/var/www
+      - ./apache/000-default.conf:/etc/apache2/sites-available/000-default.conf
