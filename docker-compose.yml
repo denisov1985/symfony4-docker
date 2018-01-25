@@ -7,3 +7,14 @@ services:
     volumes:
       - ./application:/var/www
       - ./apache/000-default.conf:/etc/apache2/sites-available/000-default.conf
+  db:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
